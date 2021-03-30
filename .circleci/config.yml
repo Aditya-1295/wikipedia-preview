@@ -70,12 +70,13 @@ workflows:
   build:
     jobs:
       - build
-      - test-mainpage:
-          requires:
-            -build
       - update-demos:
           requires:
             - build
           filters:
             branches:
               only: main
+      - test-mainpage:
+          requires:
+            - build      
+
