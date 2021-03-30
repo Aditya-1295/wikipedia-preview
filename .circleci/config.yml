@@ -58,6 +58,12 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
+          name: Prepare
+          command: npm install
+      - run:
+          name: Build
+          command: npm run build    
+      - run:
           name: Running cypress tests 
           command: node_modules/.bin/cypress run --spec cypress/integration/testing_mainpage.js
 
