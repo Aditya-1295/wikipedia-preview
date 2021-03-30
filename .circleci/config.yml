@@ -49,20 +49,21 @@ jobs:
           command: |
             gh-pages --dist . -m "Update demo [ci skip]"
   test-mainpage:
-    working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
         environment:
           TERM: xterm
     steps:
-      - attach_workspace:
-          at: ~/
+      - add_ssh_keys:
+          fingerprints:
+            - "e3:56:4b:3d:1c:58:a6:f9:7d:24:0a:90:01:77:aa:fb"
+      - checkout
       - run:
           name: Prepare
           command: npm install
       - run:
           name: Build
-          command: npm run dev    
+          command: npm run build    
       - run:
           name: Running cypress tests 
           command: node_modules/.bin/cypress run --spec cypress/integration/testing_mainpage.js
@@ -76,13 +77,14 @@ workflows:
   build:
     jobs:
       - build
+      - test-mainpage:
+          requires:
+            - build  
       - update-demos:
           requires:
             - build
           filters:
             branches:
               only: main
-      - test-mainpage:
-          requires:
-            - build      
+          
 
