@@ -42,8 +42,8 @@ jobs:
           name: Prepare
           command: |
             npm install -g --silent gh-pages
-            git config user.email "ci-build@wikimedia.org"
-            git config user.name "ci-build"
+            git config user.email "adityakrgupta938@gmail.com"
+            git config user.name "Aditya-1295"
       - run:
           name: Deploy demo
           command: |
