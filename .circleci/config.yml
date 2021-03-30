@@ -42,12 +42,29 @@ jobs:
           name: Prepare
           command: |
             npm install -g --silent gh-pages
-            git config user.email "adityakrgupta938@gmail.com"
-            git config user.name "Aditya-1295"
+            git config user.email "ci-build@wikimedia.org"
+            git config user.name "ci-build"
       - run:
           name: Deploy demo
           command: |
             gh-pages --dist . -m "Update demo [ci skip]"
+  test_main_page:
+    working_directory: ~/tmp
+    docker:
+      - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Running cypress tests 
+          command: node_modules/.bin/cypress run --spec cypress/integration/testing_mainpage.js
+
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots          
 workflows:
   version: 2
   build:
