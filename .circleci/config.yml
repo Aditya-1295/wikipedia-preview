@@ -48,7 +48,7 @@ jobs:
           name: Deploy demo
           command: |
             gh-pages --dist . -m "Update demo [ci skip]"
-  test_main_page:
+  test-mainpage:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
@@ -70,7 +70,7 @@ workflows:
   build:
     jobs:
       - build
-      - test_main_page:
+      - test-mainpage:
           requires:
             -build
       - update-demos:
