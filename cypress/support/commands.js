@@ -18,6 +18,20 @@ Cypress.Commands.add('findPopup',() =>{
 Cypress.Commands.add('getWikiLink',()=>{
     cy.get('body > div.wp-popup > div > div.wikipediapreview-footer')
 })
+Cypress.Commands.add('popupHeaderImg', () => {
+    cy.get('body > div.wp-popup > div > div.wikipediapreview-header > div.wikipediapreview-header-image',{timeout:5000})
+})
+Cypress.Commands.add('popupFooterImg1', () => {
+    cy.get('body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(1)',{timeout:5000})
+})
+
+Cypress.Commands.add('popupFooterImg2', () => {
+    cy.get('body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(2)',{timeout:5000})
+})
+
+Cypress.Commands.add('popupFooterImg3', () => {
+    cy.get('body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(3)',{timeout:5000})
+})
 
 
 

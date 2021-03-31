@@ -1,7 +1,7 @@
 describe('Testing thai article', () => {
 
     it('Visit URL', () => {
-        cy.visit('http://localhost:8080/articles/thai.html').url().should('include', '/thai.html')  
+        cy.visit('http://localhost:8080/articles/thai.html') 
     })
 
 
@@ -11,6 +11,9 @@ describe('Testing thai article', () => {
         })
         cy.getPopup().should('be.visible')  
         cy.continueReading().should('have.text', 'อ่านต่อ').click()     
+        cy.popupHeaderImg().should('be.visible')     
+        cy.popupFooterImg1().scrollIntoView().should('be.visible')  
+        cy.popupFooterImg2().should('be.visible')
         cy.goToWiki().should('be.visible').should('have.text', 'อ่านเพิ่มเติมบนวิกิพีเดีย')
         .should('have.attr', 'href').and('include', 'https://th.wikipedia.org/wiki/%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%8A%E0%B8%99%E0%B8%81')
         cy.closePopup().click()  
@@ -23,6 +26,8 @@ describe('Testing thai article', () => {
         })
         cy.getPopup().should('be.visible')  
         cy.continueReading().should('have.text', 'อ่านต่อ').click({force:true})      
+        cy.popupHeaderImg().should('be.visible')     
+        cy.popupFooterImg1().scrollIntoView().should('be.visible') 
         cy.goToWiki().should('be.visible')
         .should('have.attr', 'href').and('include', 'https://th.wikipedia.org/wiki/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%B8%E0%B9%88%E0%B8%99')
         cy.closePopup().click()  
@@ -36,12 +41,15 @@ describe('Testing thai article', () => {
         })
         cy.getPopup().should('be.visible') 
         cy.continueReading().should('have.text', 'อ่านต่อ').click()        
+        cy.popupHeaderImg().should('be.visible')     
+        cy.popupFooterImg1().scrollIntoView().should('be.visible')  
+        cy.popupFooterImg2().should('be.visible')    
+        cy.popupFooterImg3().should('be.visible') 
         cy.goToWiki().should('be.visible').should('have.text', 'อ่านเพิ่มเติมบนวิกิพีเดีย')
         .should('have.attr', 'href').and('include', 'https://th.wikipedia.org/wiki/%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2') 
         cy.closePopup().click() 
         cy.getPopup().should('not.be.visible')  
     })
-
 
 })
 
@@ -59,6 +67,9 @@ describe('Testing thai article for phone', () => {
         })
         cy.getPopup().should('be.visible')  
         cy.continueReading().should('have.text', 'อ่านต่อ').click()     
+        cy.popupHeaderImg().should('be.visible')     
+        cy.popupFooterImg1().scrollIntoView().should('be.visible')  
+        cy.popupFooterImg2().should('be.visible')
         cy.goToWiki().should('be.visible').should('have.text', 'อ่านเพิ่มเติมบนวิกิพีเดีย')
         .should('have.attr', 'href').and('include', 'https://th.wikipedia.org/wiki/%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%8A%E0%B8%99%E0%B8%81')
         cy.closePopup().click()  
@@ -71,6 +82,8 @@ describe('Testing thai article for phone', () => {
         })
         cy.getPopup().should('be.visible')  
         cy.continueReading().should('have.text', 'อ่านต่อ').click({force:true})      
+        cy.popupHeaderImg().should('be.visible')     
+        cy.popupFooterImg1().scrollIntoView().should('be.visible') 
         cy.goToWiki().should('be.visible')
         .should('have.attr', 'href').and('include', 'https://th.wikipedia.org/wiki/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%B8%E0%B9%88%E0%B8%99')
         cy.closePopup().click()  
@@ -84,11 +97,13 @@ describe('Testing thai article for phone', () => {
         })
         cy.getPopup().should('be.visible') 
         cy.continueReading().should('have.text', 'อ่านต่อ').click()        
+        cy.popupHeaderImg().should('be.visible')     
+        cy.popupFooterImg1().scrollIntoView().should('be.visible')  
+        cy.popupFooterImg2().should('be.visible')    
+        cy.popupFooterImg3().should('be.visible') 
         cy.goToWiki().should('be.visible').should('have.text', 'อ่านเพิ่มเติมบนวิกิพีเดีย')
         .should('have.attr', 'href').and('include', 'https://th.wikipedia.org/wiki/%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2') 
         cy.closePopup().click() 
         cy.getPopup().should('not.be.visible')  
     })
-
-
 })
