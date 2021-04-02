@@ -9,8 +9,8 @@ jobs:
       - checkout
       # restore folder with npm dependencies and Cypress binary
       - restore_caches:
-        keys:
-          - cache-{{ checksum "package.json" }}
+          keys:
+            - cache-{{ checksum "package.json" }}
       #install npm dependencies and Cypress binary(if first time)
       #if they were cached this is sper quixk
       - run:
@@ -38,8 +38,6 @@ workflows:
   version: 2
   build:
     jobs:
-      - build
-      - test-mainpage:
-          requires:
-            - build
+      - test-mainpage
+          
 
