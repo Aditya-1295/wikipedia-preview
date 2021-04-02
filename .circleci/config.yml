@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       # restore folder with npm dependencies and Cypress binary
-      - restore_caches:
+      - restore_cache:
           keys:
             - cache-{{ checksum "package.json" }}
       #install npm dependencies and Cypress binary(if first time)
@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Prepare
           command: npm install
-      - save_caches:
+      - save_cache:
           keys: cache-{{ checksum "package.json" }}
           paths:
             - ~/.npm
