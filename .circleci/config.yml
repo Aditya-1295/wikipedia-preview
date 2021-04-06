@@ -290,19 +290,19 @@ workflows:
       - test-english:
           requires:
             - build 
-    - test-french:
+      - test-french:
           requires:
             - build 
-    - test-hindi:
+      - test-hindi:
           requires:
             - build 
-    - test-indonesia:
+      - test-indonesia:
           requires:
             - build 
-    - test-spanish:
+      - test-spanish:
           requires:
             - build 
-    - test-thai:
+      - test-thai:
           requires:
             - build   
       - update-demos:
