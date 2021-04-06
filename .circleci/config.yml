@@ -117,7 +117,7 @@ jobs:
           background: true    
       - run:
           name: Running cypress tests 
-          command: node_modules/.bin/cypress run --spec cypress/integration/arabic_popup.js
+          command: node_modules/.bin/cypress run --spec cypress/integration/pop-ups/arabic_popup.js
 
       - store_artifacts:
           path: cypress/videos
@@ -142,7 +142,7 @@ jobs:
           background: true    
       - run:
           name: Running cypress tests 
-          command: node_modules/.bin/cypress run --spec cypress/integration/english_popup.js
+          command: node_modules/.bin/cypress run --spec cypress/integration/pop-ups/english_popup.js
 
       - store_artifacts:
           path: cypress/videos
@@ -167,7 +167,7 @@ jobs:
           background: true    
       - run:
           name: Running cypress tests 
-          command: node_modules/.bin/cypress run --spec cypress/integration/french_popup.js
+          command: node_modules/.bin/cypress run --spec cypress/integration/pop-ups/french_popup.js
 
       - store_artifacts:
           path: cypress/videos
@@ -192,7 +192,7 @@ jobs:
           background: true    
       - run:
           name: Running cypress tests 
-          command: node_modules/.bin/cypress run --spec cypress/integration/hindi_popup.js
+          command: node_modules/.bin/cypress run --spec cypress/integration/pop-ups/hindi_popup.js
 
       - store_artifacts:
           path: cypress/videos
@@ -217,7 +217,7 @@ jobs:
           background: true    
       - run:
           name: Running cypress tests 
-          command: node_modules/.bin/cypress run --spec cypress/integration/indonesia_popup.js
+          command: node_modules/.bin/cypress run --spec cypress/integration/pop-ups/indonesia_popup.js
 
       - store_artifacts:
           path: cypress/videos
@@ -242,7 +242,7 @@ jobs:
           background: true    
       - run:
           name: Running cypress tests 
-          command: node_modules/.bin/cypress run --spec cypress/integration/spanish_popup.js
+          command: node_modules/.bin/cypress run --spec cypress/integration/pop-ups/spanish_popup.js
 
       - store_artifacts:
           path: cypress/videos
@@ -267,7 +267,7 @@ jobs:
           background: true    
       - run:
           name: Running cypress tests 
-          command: node_modules/.bin/cypress run --spec cypress/integration/thai_popup.js
+          command: node_modules/.bin/cypress run --spec cypress/integration/pop-ups/thai_popup.js
 
       - store_artifacts:
           path: cypress/videos
