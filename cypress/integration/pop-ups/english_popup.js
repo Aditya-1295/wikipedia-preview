@@ -51,19 +51,6 @@ describe('Testing English article', () => {
         cy.getPopup().should('not.be.visible')  
     })
 
-    it('Popup 50', () => {
-        cy.findPopup().within(()=>{
-            cy.get('p:nth-child(3) > span:nth-child(2)').should('have.text', '50').click({ force: true })
-        })
-        cy.get('body > div.wp-popup > div > div.wikipediapreview-body.wikipediapreview-body-disambiguation').should('be.visible')
-        cy.get('body > div.wp-popup > div > div.wikipediapreview-body.wikipediapreview-body-disambiguation > div.wikipediapreview-body-action > a')
-        .should('have.attr', 'href').and('include', 'https://en.wikipedia.org/wiki/50')
-        cy.closePopup().click()
-        cy.getPopup().should('not.be.visible')
-    })
-
-
-
 })
 
 describe('Testing English article for phone', () => {
@@ -119,18 +106,5 @@ describe('Testing English article for phone', () => {
         cy.closePopup().click() 
         cy.getPopup().should('not.be.visible')  
     })
-
-    it('Popup 50', () => {
-        cy.findPopup().within(()=>{
-            cy.get('p:nth-child(3) > span:nth-child(2)').should('have.text', '50').click({ force: true })
-        })
-        cy.get('body > div.wp-popup > div > div.wikipediapreview-body.wikipediapreview-body-disambiguation').should('be.visible')
-        cy.get('body > div.wp-popup > div > div.wikipediapreview-body.wikipediapreview-body-disambiguation > div.wikipediapreview-body-action > a')
-        .should('have.attr', 'href').and('include', 'https://en.wikipedia.org/wiki/50')
-        cy.closePopup().click()
-        cy.getPopup().should('not.be.visible')
-    })
-
-
 
 })
